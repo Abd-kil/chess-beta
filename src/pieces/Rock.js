@@ -1,4 +1,7 @@
+import blackRock from '../images/black-rock.png';
+import whiteRock from '../images/white-rock.png';
 function Rock(props){
-    return <img src={`${props.color}-rock`}/>
+    const kingImg = props.color === 'black'?blackRock:whiteRock;
+    return <img src={kingImg}/>
 }
 export default Rock;

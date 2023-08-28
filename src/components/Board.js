@@ -1,12 +1,19 @@
 import Square from './Square';
+import pieces from '../pieces/pieces';
+import { useEffect } from 'react';
 function Board(){
     const squares = [];
+    //const pieces = require('../pieces/pieces');
+    const index = ['a','b','c','d','e','f','g','h'];
     for(let i = 1; i <= 8; i++){
-        const row = [];
         for(let j = 1; j <= 8; j++){
-            row.push(<Square color={(i+j)%2===0?'white':'black'} piece={null} key={`${i}-${j}`}/>)
+            squares.push(
+            <Square 
+            color={(i+j)%2===0?'white':'#850'} 
+            piece={pieces.has(`${index[j-1]}${i}`)?pieces.get(`${index[j-1]}${i}`):null}
+            key={`${index[i]}${j}`}/>
+            );
         }
-        squares.push(row);
     }
     const style = {
         padding:'0',

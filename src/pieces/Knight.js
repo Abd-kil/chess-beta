@@ -1,4 +1,7 @@
+import blackKnight from '../images/black-knight.png';
+import whiteKnight from '../images/white-knight.png';
 function Knight(props){
-    return <img src={`${props.color}-knight`}/>
+    const knightImg = props.color === 'black'?blackKnight:whiteKnight;
+    return <img src={knightImg}/>
 }
 export default Knight;

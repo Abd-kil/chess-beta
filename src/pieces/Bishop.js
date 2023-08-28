@@ -1,4 +1,7 @@
+import blackBishop from '../images/black-bishop.png';
+import whitBishop from '../images/white-bishop.png';
 function Bishop(props){
-    return <img src={`${props.color}-bishop`}/>
+    const bishopImg = props.color === 'black'? blackBishop:whitBishop;
+    return <img src={bishopImg}/>
 }
 export default Bishop;
